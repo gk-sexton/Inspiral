@@ -3,6 +3,7 @@
 [[Heroku]](https://secret-wave-93670.herokuapp.com/)  
 ## Minimum Viable Product
 Inspiral is an RSS feed aggregator based off Feedly. It allows users to easily categorize and view RSS feeds in one place. The framework will be built using Ruby on Rails and React/Redux. The goal is to have a smooth, styled, and fully operational site by the deadline. Current criteria is:
+
 0. Account creation, log in/out, and guest/demo usage
 0. Development README, later replaced with a production README
 0. Collections
@@ -41,4 +42,4 @@ Inspiral is an RSS feed aggregator based off Feedly. It allows users to easily c
 ## Bonus FEATURES
 0. Favorites
 0. Search functionality
-0. Extension to identify local RSS url 
+0. Extension to identify local RSS url
