@@ -41,5 +41,5 @@
 | '/sign-in' | 'AuthFormContainer' |
 | '/home' |  'HomeContainer' |
 | '/home/newfeed'| 'NewFeedFormContainer' |
-| '/home/collection/:collectionId'  | 'FeedContainer' |
-| '/home/subscription/:subscriptionURL' | 'FeedContainer' |
+| '/home/collections/:collectionId'  | 'FeedContainer' |
+| '/home/subscriptions/:subscriptionURL' | 'FeedContainer' |
