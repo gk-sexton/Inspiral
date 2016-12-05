@@ -4,21 +4,21 @@
 ## Minimum Viable Product
 Inspiral is an RSS feed aggregator based off Feedly. It allows users to easily categorize and view RSS feeds in one place. The framework will be built using Ruby on Rails and React/Redux. The goal is to have a smooth, styled, and fully operational site by the deadline. Current criteria is:
 
-0. Account creation, log in/out, and guest/demo usage
-0. Development README, later replaced with a production README
-0. Collections
+- [ ] Account creation, log in/out, and guest/demo usage
+- [ ] Development README, later replaced with a production README
+- [ ] Collections
   * Adequate styling
   * Smooth, bug-free navigation
   * Adequate and appropriate seeds to demo feature
-0. RSS Feeds
+- [ ] RSS Feeds
   * Adequate styling
   * Smooth, bug-free navigation
   * Adequate and appropriate seeds to demo feature
-0. Articles
+- [ ] Articles
   * Adequate styling
   * Smooth, bug-free navigation
   * Adequate and appropriate seeds to demo feature
-0. Reads
+- [ ] Reads
   * Adequate styling
   * Smooth, bug-free navigation
   * Adequate and appropriate seeds to demo feature
@@ -51,7 +51,7 @@ Inspiral is an RSS feed aggregator based off Feedly. It allows users to easily c
 ### (Bonus) Phase 7: Create chrome extension for detecting current pages RSS url
 **Objective:** Create lightweight extension for chrome that easily finds the current webpage's RSS feed. Integrate Inspiral authorization once working.
 
-## Bonus Features 
+## Bonus Features
 0. Favorites
 0. Search functionality
 0. Extension to identify local RSS url
