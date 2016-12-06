@@ -21,6 +21,7 @@
 |-------------|-----------|---------|
 | id | integer | not null, primary key |
 | url | text | not null, indexed|
+| user_id | integer | not_null, indexed |
 
 
 ## articles
