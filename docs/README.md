@@ -38,12 +38,12 @@ Inspiral is an RSS feed aggregator based off Feedly. It allows users to easily c
 ## Development Timeline
 ### Phase 1: Backend setup and front end user authentication (2 days)
 **Objective:** Functioning rails project with front-end Authentication
-### Phase 2: Collection model, API, and components (2 days)
-**Objective:** Collections can be created, edited, and removed through API, satisfactory styling.
-### Phase 3: Subscription model, API, and components (2 days)
-**Obejctive:** Subscriptions can be added to and removed from collections, taggings model is finalized, satisfactory styling.
-### Phase 4: Welcome page (2 days)
+### Phase 2: Welcome page (2 days)
 **Objective:** Welcome page has functional login forms and satisfactory styling.
+### Phase 3: Collection model, API, and components (2 days)
+**Objective:** Collections can be created, edited, and removed through API, satisfactory styling.
+### Phase 4: Subscription model, API, and components (2 days)
+**Obejctive:** Subscriptions can be added to and removed from collections, taggings model is finalized, satisfactory styling.
 ### Phase 5: Add favorites and search functionality (2 days/Thurs W9D4)
 **Objective:** Primarily, add ability for users to tag articles as a favorite. Secondarily, add search functionality within users collections.
 ### (Bonus) Phase 6: Finalize CSS and debugging

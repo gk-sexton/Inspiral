@@ -15,14 +15,20 @@
 | id | integer | not null, primary key |
 | title | string | not null, indexed |
 | user_id | integer | not null, indexed |
-| subscription_id | integer | not null, indexed, unique |
 
 ## subscriptions
 | Column Name | Data Type | details |
 |-------------|-----------|---------|
 | id | integer | not null, primary key |
 | url | text | not null, indexed|
-| collection_id | integer | not null, indexed |
+
+
+## articles
+| Column Name | Data Type | details |
+|-------------|-----------|---------|
+| id | integer | not null, primary key|
+|subscription_id | integer | not null, indexed |
+| read | boolean | not null |
 
 ## taggings
 | Column Name | Data Type | details |
