@@ -3,9 +3,9 @@ class Api::SessionsController < ApplicationController
     @user = User.find_by_credentials(params[:user])
     if @user
       login(@user)
-      redirect_to #main feed?
+      render json: @user
     else
-      render (json: ['Invalid username and/or password'], status: 401)
+      render json: ['Invalid username and/or password'], status: 401
     end
   end
 
@@ -13,8 +13,9 @@ class Api::SessionsController < ApplicationController
     @user = current_user
     if @user
       logout
+      render json: "logged out"
     else
-      render (json: ["Logout unavailable"], status: 404)
+      render json: ["Logout unavailable"], status: 404
     end
   end
 end
