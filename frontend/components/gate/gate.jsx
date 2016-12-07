@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router';
+import { Link, withRouter } from 'react-router';
 
 const sessionLinks = () => (
   <nav className="login-signup">
@@ -9,15 +9,26 @@ const sessionLinks = () => (
   </nav>
 );
 
-const welcomeUser = (currentUser, logout) => (
-  <div>
-    <h2 className="user-welcome"> {currentUser.username} is the current user</h2>
-    <button className="logout-button" onClick={logout}>Log out</button>
-  </div>
+const logoutCB = (logout, router) => {
+  return () => {
+    logout().then(() => {
+      router.push('/login');
+    })
+  }
+};
+
+const welcomeUser = (currentUser, logout, router) => {
+  return (
+    <div>
+      <h2 className="user-welcome"> {currentUser.username} is the current user</h2>
+      <button className="logout-button" onClick={logoutCB(logout, router)}>Log out</button>
+    </div>
+  );
+};
+
+const displaySwitch = ({currentUser, logout, router}) => (
+  currentUser ? welcomeUser(currentUser, logout, router) : sessionLinks()
 );
 
-const displaySwitch = ({currentUser, logout}) => (
-  currentUser ? welcomeUser(currentUser, logout) : sessionLinks()
-);
 
-export default displaySwitch;
+export default withRouter(displaySwitch);

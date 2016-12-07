@@ -3,7 +3,8 @@ import GateContainer from './gate/gate_container';
 
 const App = ({children}) => (
   <div>
-    <h1> Inspiral?? </h1>
+    <h2> Let's get started with </h2>
+    <h1> Inspiral </h1>
     <GateContainer/>
     { children }
   </div>

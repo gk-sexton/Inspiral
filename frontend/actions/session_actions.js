@@ -13,7 +13,7 @@ export function login(user) {
 
 export function logout() {
   return (dispatch) => {
-    return APIUtil.logout().then(user => dispatch(receiveCurrentUser(null)));
+    return APIUtil.logout().then(() => dispatch(receiveCurrentUser(null)));
   }
 }
 
