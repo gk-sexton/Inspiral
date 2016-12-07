@@ -6,8 +6,8 @@ class User < ActiveRecord::Base
   after_initialize :ensure_session_token
   before_validation :ensure_session_token_uniqueness
 
-  has_many :collections, dependent: :destroy
-  has_many :subscriptions, dependent: :destroy
+  # has_many :collections, dependent: :destroy
+  # has_many :subscriptions, dependent: :destroy
 
 
 

@@ -10,7 +10,7 @@ class Api::UsersController < ApplicationController
   end
 
   def show
-    redirect_to #main feed? 
+    render json: 'hello?'
   end
 
   def edit
