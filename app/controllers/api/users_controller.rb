@@ -5,18 +5,14 @@ class Api::UsersController < ApplicationController
       login(@user)
       render "api/users/show"
     else
-      flash.now[:errors] = @user.errors
+      render json: @user.errors.full_messages, status: 422
     end
   end
 
+
   def show
-    render json: 'hello?'
+    @user = User.find(params[:id])
   end
-
-  def edit
-    #possibly for managing collections/subscriptions?
-  end
-
   private
 
   def user_params
