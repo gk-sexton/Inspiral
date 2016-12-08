@@ -1,0 +1,48 @@
+.gate-header {
+  position: static;
+  width: 100%;
+  background: #ffffff;
+  vertical-align: middle;
+  padding: 5px 5px 5px;
+}
+.master {
+  position: relative;
+}
+.gate-sidebar {
+  position: absolute;
+  top: 29px;
+  bottom: 0;
+  width: 30px;
+  background: #a6c0c4;
+}
+.master:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.gate-div {
+  width: 900px;
+  margin: auto;
+  background: ##E2E2E1;
+  padding: 20px;
+  height: 200px;
+}
+.gate-div h1 {
+  font-size: 36px;
+  padding: 20px;
+  text-shadow: 0px 0px 5px #808339;
+}
+.gate-div a {
+
+  display: block;
+  text-align: center;
+  width: 90px;
+  padding:  5px;
+  text-decoration: none;
+  font-size: 24px;
+  background: #2bb24c;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  border: 1px solid #8796b1;
+}

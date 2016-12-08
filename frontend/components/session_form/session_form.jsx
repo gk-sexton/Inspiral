@@ -39,7 +39,7 @@ class SessionForm extends React.Component {
 				<div className="login-form-container">
 					<form onSubmit={this.handleSubmit} className="login-form-box">
 						<br/>
-						Please {this.props.formType} or {this.navLink()}
+						Log in to Inspiral or {this.navLink()}
 							<div className='login-form'>
 								<label> Username:
 									<input type="text"
@@ -65,7 +65,7 @@ class SessionForm extends React.Component {
 				<div className="login-form-container">
 					<form onSubmit={this.handleSubmit} className="login-form-box">
 						<br/>
-						Please {this.props.formType} or {this.navLink()}
+						Sign up to Inspiral or {this.navLink()}
 						<div className="login-form">
 							<label> Email:
 								<input type="text"
