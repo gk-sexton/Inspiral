@@ -46,3 +46,11 @@
   border-radius: 5px;
   border: 1px solid #8796b1;
 }
+.gate-div button {
+  background: #2BB24C;
+  color: white;
+  margin-top: 10px;
+  font-weight: bold;
+  border-radius: 5px;
+  border: none;
+}

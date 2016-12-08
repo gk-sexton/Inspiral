@@ -1,0 +1,41 @@
+.login-form-container {
+  background: white;
+  width:350px;
+  margin: auto;
+  border: 1px solid #b4c2cf
+}
+
+.login-form-container > aside {
+  text-align: center;
+  padding-bottom: 15px;
+}
+.prompt {
+  font-weight: bold;
+  text-align: center;
+}
+
+.login-form {
+  text-align: center;
+}
+
+.login-form > input {
+  background: #FAFAFA;
+  padding: 5px;
+}
+
+.login-form >input:first-child {
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+}
+.login-form >input:nth-last-child(3 ) {
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+.login-form > input:last-child {
+  background: #2BB24C;
+  color: white;
+  margin-top: 10px;
+  font-weight: bold;
+  border-radius: 5px;
+  border: none;
+}

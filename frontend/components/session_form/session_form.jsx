@@ -39,25 +39,24 @@ class SessionForm extends React.Component {
 				<div className="login-form-container">
 					<form onSubmit={this.handleSubmit} className="login-form-box">
 						<br/>
-						Log in to Inspiral or {this.navLink()}
+						<div className='prompt'> Log in to Inspiral </div>
+						<br/>
 							<div className='login-form'>
-								<label> Username:
-									<input type="text"
+									<input type="text" placeholder='Username'
 										value={this.state.username}
 										onChange={this.update("username")}
 										className="login-input" />
-								</label>
 								<br/>
-								<label> Password:
-									<input type="password"
+									<input type="password" placeholder='Password'
 										value={this.state.password}
 										onChange={this.update("password")}
 										className="login-input" />
-								</label>
 								<br/>
 								<input type="submit" value="Submit" />
 							</div>
 					</form>
+					<br/>
+					<aside>{this.navLink()}</aside>
 				</div>
 			);
 		} else {
@@ -65,32 +64,29 @@ class SessionForm extends React.Component {
 				<div className="login-form-container">
 					<form onSubmit={this.handleSubmit} className="login-form-box">
 						<br/>
-						Sign up to Inspiral or {this.navLink()}
+						<div className='prompt'> Sign up to Inspiral </div>
+						<br/>
 						<div className="login-form">
-							<label> Email:
-								<input type="text"
+								<input type="text" placeholder='Email'
 									value={this.state.email}
 									onChange={this.update("email")}
 									className="login-input" />
-							</label>
 							<br/>
-							<label> Username:
-								<input type="text"
+								<input type="text" placeholder='Username'
 									value={this.state.username}
 									onChange={this.update("username")}
 									className="login-input" />
-							</label>
 	            <br/>
-							<label> Password:
-								<input type="password"
+								<input type="password" placeholder='Password'
 									value={this.state.password}
 									onChange={this.update("password")}
 									className="login-input" />
-							</label>
 							<br/>
 							<input type="submit" value='Submit'/>
 						</div>
 					</form>
+					<br/>
+					<aside>{this.navLink()}</aside>
 				</div>
 			);
 		}
