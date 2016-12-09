@@ -13,6 +13,7 @@ class sessionLinks extends React.Component {
     this.openSignup = this.openSignup.bind(this);
     this.openLogin = this.openLogin.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
+    this.guestLogin = this.guestLogin.bind(this);
     // this.componentDidUpdate = this.componentDidUpdate.bind(this);
   }
 
@@ -29,7 +30,7 @@ class sessionLinks extends React.Component {
 
   guestLogin(){
     const type = this.props.login
-    const user = {username: 'guest', password: 'youllneverguestit'}
+    const user = {username: 'Guest', password: 'youllneverguestit'}
     this.props.processForm(type,user);
   }
 
