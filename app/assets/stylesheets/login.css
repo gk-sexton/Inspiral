@@ -2,23 +2,78 @@
   width: 300px;
   margin:  150px auto;
   text-align: center;
-  background: #d3ebd9;
+  background: white;
   border: 1px solid black;
+  border-radius: 8px;
+  z-index: 11;
+  opacity: 1;
+  transition: all 0.2s;
+}
+.modal-box-overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(60, 60, 60,0.7);
+  z-index: 10;
+  transition: all 0.2s;
 }
 
-.modal-box {
-}
 
 .login-form {
   padding: 25px 15px;
-  margin: auto;
+  margin-left: 24px;
   width: 200px;
 }
 .modal-box h3 {
   padding-top: 25px;
   font-weight: bold;
+  margin: auto;
+  font-size: 20px;
 }
 
 :focus {
   outline: 1px solid grey;
+}
+
+.login-div input:last-child {
+  color: white;
+  font-weight: bold;
+  margin: 25px 69px 10px;
+  border-radius: 5px;
+  padding: 5px;
+  background: #2BB24C;
+  cursor: pointer;
+  border: none;
+  font-size: 20px;
+}
+.login-div input {
+  background: #FAFAFA;
+  border: 1px solid #D6D6D6;
+  padding: 15px;
+  font-size: 16px;
+}
+.login-div input:first-child {
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
+}
+.login-div input:nth-last-child(+3) {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+
+.submit-button:hover, .submit-button:focus {
+  box-shadow: 0 0 2px #71716d;
+}
+
+.switch-link {
+  background: transparent;
+  padding: 15px;
+  border: none;
+  outline: none;
+}
+.switch-link:hover {
+  cursor: pointer;
 }
