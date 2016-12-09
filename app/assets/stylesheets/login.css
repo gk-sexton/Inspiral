@@ -77,3 +77,10 @@
 .switch-link:hover {
   cursor: pointer;
 }
+.error-list {
+  list-style: circle;
+  color: #f61010;
+  text-align: left;
+  margin-left: 60px;
+  width: 190px;
+}

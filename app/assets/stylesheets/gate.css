@@ -24,7 +24,6 @@
 .gate-body {
   width: 900px;
   margin: auto;
-  padding-top: 80px;
   background: #E2E2E1;
   height: 200px;
 }
@@ -49,7 +48,7 @@
   padding: 10px;
 }
 
-.gate-body button:hover, .gate-body button:focus{
+.gate-body button:hover {
   cursor: pointer;
   background: #208a39;
   box-shadow: 0 0 3px #125221;

@@ -1,13 +1,15 @@
 import { connect } from 'react-redux';
-import { logout, login, signup } from '../../actions/session_actions';
+import { logout, login, signup, resetErrors } from '../../actions/session_actions';
 import displaySwitch from './gate';
 
 const mapStateToProps = ({ session }) => ({
-  currentUser: session.currentUser
+  currentUser: session.currentUser,
+  errors: session.errors
 });
 
 const mapDispatchToProps = (dispatch) => {
   return {
+    resetErrors: () => dispatch(resetErrors()),
     login,
     signup,
     logout: () => dispatch(logout()),

@@ -12,6 +12,7 @@ class sessionLinks extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
     this.openSignup = this.openSignup.bind(this);
     this.openLogin = this.openLogin.bind(this);
+    this.renderErrors = this.renderErrors.bind(this);
     // this.componentDidUpdate = this.componentDidUpdate.bind(this);
   }
 
@@ -26,7 +27,24 @@ class sessionLinks extends React.Component {
   		this.props.processForm(type,user);
   }
 
+  guestLogin(){
+    const type = this.props.login
+    const user = {username: 'guest', password: 'youllneverguestit'}
+    this.props.processForm(type,user);
+  }
+
+  renderErrors() {
+    return (
+      <ul className='error-list'>
+        {this.props.errors.map((error, i)=>
+          <li key={`error-${i}`}>
+            {error}
+          </li>)}
+      </ul>
+    );
+  }
   openModal (type) {
+    this.props.resetErrors();
     this.setState({ isOpen: true , modalType: type });
   }
 
@@ -48,6 +66,13 @@ class sessionLinks extends React.Component {
 		});
 	}
 
+  logoutCB () {
+    return () =>  {
+      this.closeModal();
+      this.props.logout();
+    }
+  }
+
   render () {
     let prompt;
     let emailField;
@@ -56,7 +81,7 @@ class sessionLinks extends React.Component {
       return (
         <div>
           <h2 className="user-welcome"> {this.props.currentUser.username} is the current user</h2>
-          <button className="logout-button" onClick={logoutCB(this.props.logout, this.props.router)}>Log out</button>
+          <button className="logout-button" onClick={this.logoutCB(this.props.logout)}>Log out</button>
         </div>
       );
     } else {
@@ -75,7 +100,6 @@ class sessionLinks extends React.Component {
            Dont have an account? Sign up instead</button>;
         }
       }
-
       return (
         <div>
           <header className='gate-header'>Inspiral<img className="bulb" src={window.logo}/>
@@ -85,6 +109,8 @@ class sessionLinks extends React.Component {
             <h1>Lets get started with Inspiral</h1>
             <p>Keep all your followed blogs, podcasts, and social media in one, convenient place.</p>
             <button className='signup-button' onClick={ this.openSignup }>REGISTER FOR FREE</button>
+            <p>Alternatively, you can demo the site, no sign-up reqired:</p>
+            <button className='signup-button' onClick={ this.guestLogin }>TAKE A SPIN</button>
             <img className='splash' src={window.splashimage}/>
             <Modal className='modal-box' overlayClassName='modal-box-overlay'
               contentLabel='' onRequestClose={this.closeModal} isOpen={this.state.isOpen} >
@@ -92,35 +118,34 @@ class sessionLinks extends React.Component {
               <form className="login-form" onSubmit={ this.handleSubmit }>
                 <div className='login-div'>
                   { emailField }
+                  <input type='text' placeholder='Username'
+                        value={this.state.username}
+                        onChange={this.update('username')}
+                        className='login-input' />
                   <br/>
-                  <input type="text" placeholder='Username'
-                    value={this.state.username}
-                    onChange={this.update("username")}
-                    className="login-input" />
-                  <br/>
-                  <input type="password" placeholder='Password'
-                    value={this.state.password}
-                    onChange={this.update("password")}
-                    className="login-input" />
+                  <input type='password' placeholder='Password'
+                        onChange={this.update('password')}
+                        className='login-input' />
                   <br/>
                   <input className='submit-button' type="submit" value='Submit'/>
                 </div>
               </form>
+              { this.renderErrors() }
               { switchLink }
             </Modal>
           </div>
         </div>
-      )
-    };
+      );
+    }
   }
 
 
 
-const logoutCB = (logout, router) => {
-  return () => {
-    logout()
-  }
-}
+// const logoutCB = (logout, router) => {
+//   return () => {
+//     logout()
+//   }
+// }
 
 
 
