@@ -21,7 +21,6 @@ class sessionLinks extends React.Component {
 
   handleSubmit(e) { //TYPE IS EITHER LOGIN OR SIGNUP
   		e.preventDefault();
-      debugger
       const type = (this.state.modalType === 'login') ? this.props.login : this.props.signup;
   		const user = Object.assign({}, this.state);
   		this.props.processForm(type,user);
