@@ -21,8 +21,10 @@ class sessionLinks extends React.Component {
 
   handleSubmit(e) { //TYPE IS EITHER LOGIN OR SIGNUP
   		e.preventDefault();
+      debugger
+      const type = (this.state.modalType === 'login') ? this.props.login : this.props.signup;
   		const user = Object.assign({}, this.state);
-  		this.props.processForm(user);
+  		this.props.processForm(type,user);
   }
 
   openModal (type) {
@@ -117,11 +119,10 @@ class sessionLinks extends React.Component {
 
 const logoutCB = (logout, router) => {
   return () => {
-    logout().then(() => {
-      router.push('/login');
-    })
+    logout()
   }
-};
+}
+
 
 
 

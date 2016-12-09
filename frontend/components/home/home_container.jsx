@@ -1,9 +1,9 @@
 import { connect } from 'react-redux';
 import { logout, login, signup } from '../../actions/session_actions';
-import displaySwitch from './gate';
+import Home from './home';
 
-const mapStateToProps = ({ session }) => ({
-  currentUser: session.currentUser
+const mapStateToProps = (state) => ({
+
 });
 
 const mapDispatchToProps = (dispatch) => {
@@ -18,4 +18,4 @@ const mapDispatchToProps = (dispatch) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(displaySwitch);
+)(Home);
