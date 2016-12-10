@@ -69,6 +69,7 @@ class sessionLinks extends React.Component {
 
   logoutCB () {
     return () =>  {
+      this.props.router.push('/');
       this.closeModal();
       this.props.logout();
     }
@@ -79,6 +80,7 @@ class sessionLinks extends React.Component {
     let emailField;
     let switchLink;
     if (this.props.currentUser) {
+      this.props.router.push('/home');
       return (
         <div>
           <h2 className="user-welcome"> {this.props.currentUser.username} is the current user</h2>
