@@ -17,11 +17,12 @@ class sessionLinks extends React.Component {
     // this.componentDidUpdate = this.componentDidUpdate.bind(this);
   }
 
-  componentDidUpdate(){
-    if(this.props.loggedIn){this.props.router.push('/');}
-  }
+  // componentDidUpdate(){
+  //   debugger
+  //   if(this.props.loggedIn){this.props.router.push('/');}
+  // }
 
-  handleSubmit(e) { //TYPE IS EITHER LOGIN OR SIGNUP
+  handleSubmit(e) {
   		e.preventDefault();
       const type = (this.state.modalType === 'login') ? this.props.login : this.props.signup;
   		const user = Object.assign({}, this.state);
@@ -80,13 +81,7 @@ class sessionLinks extends React.Component {
     let emailField;
     let switchLink;
     if (this.props.currentUser) {
-      this.props.router.push('/home');
-      return (
-        <div>
-          <h2 className="user-welcome"> {this.props.currentUser.username} is the current user</h2>
-          <button className="logout-button" onClick={this.logoutCB(this.props.logout)}>Log out</button>
-        </div>
-      );
+      this.props.router.transitionTo('/home');
     } else {
       if (this.state.modalType === 'signup'){
         emailField = <input type='text' placeholder='Email'

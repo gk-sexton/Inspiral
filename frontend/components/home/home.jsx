@@ -1,11 +1,24 @@
+import React from 'react';
+import { Link, withRouter } from 'react-router';
+
 class Home extends React.Component {
+  constructor(props){
+    super(props);
+  }
   render () {
     return (
       <div>
-        <h2 className="user-welcome"> {this.props.currentUser.username} is the current user</h2>
-        <button className="logout-button" onClick={this.logoutCB(this.props.logout, this.props.router)}>Log out</button>
+        HELLO
+        <button onClick>Logout</button>
       </div>
     );
+  }
+
+  logoutCB () {
+    return () =>  {
+      this.props.logout();
+      this.props.router.push('/');
+    }
   }
 }
 export default withRouter(Home)
