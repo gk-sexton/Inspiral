@@ -14,28 +14,19 @@ class Gate extends React.Component {
     this.openLogin = this.openLogin.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
     this.guestLogin = this.guestLogin.bind(this);
-    // this.componentDidUpdate = this.componentDidUpdate.bind(this);
-  }
-
-  // componentDidUpdate(){
-  //   debugger
-  //   if(this.props.loggedIn){this.props.router.push('/');}
-  // }
-  componentDidUpdate(){
-      this.props.router.push('/');
   }
 
   handleSubmit(e) {
   		e.preventDefault();
       const type = (this.state.modalType === 'login') ? this.props.login : this.props.signup;
   		const user = Object.assign({}, this.state);
-  		this.props.processForm(type,user);
+  		this.props.processForm(type,user).then(() => this.props.router.push('/'));
   }
 
   guestLogin(){
-    const type = this.props.login
-    const user = {username: 'Guest', password: 'youllneverguestit'}
-    this.props.processForm(type,user);
+    const type = this.props.login;
+    const user = {username: 'Guest', password: 'youllneverguestit'};
+    this.props.processForm(type,user).then(() => this.props.router.push('/'));
   }
 
   renderErrors() {
@@ -70,10 +61,6 @@ class Gate extends React.Component {
 			[field]: e.currentTarget.value
 		});
 	}
-
-  redirectCB(){
-    this.props.router.push('/home');
-  }
 
   render () {
     let prompt;
@@ -131,19 +118,5 @@ class Gate extends React.Component {
     );
     }
   }
-
-
-
-// const logoutCB = (logout, router) => {
-//   return () => {
-//     logout()
-//   }
-// }
-
-
-
-
-
-
 
 export default withRouter(Gate);
