@@ -1,16 +1,22 @@
 import { connect } from 'react-redux';
+import { logout } from '../../actions/session_actions';
 import Home from './home';
 
-// const mapStateToProps = (state) => ({
-//
-// });
-//
-// const mapDispatchToProps = (dispatch) => {
-//
-// };
-//
-// export default connect(
-//   mapStateToProps,
-//   mapDispatchToProps
-// )(Home);
-export default Home;
+const mapStateToProps = ({ session }) => {
+  debugger
+  return {
+    currentUser: session.currentUser,
+    errors: session.errors
+  };
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    logout: () => dispatch(logout())
+  };
+};
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(Home);
