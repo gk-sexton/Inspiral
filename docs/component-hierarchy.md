@@ -1,6 +1,6 @@
 # Component Hierarchy
 
-### AuthFormContainer
+### GateContainer
   * Authform
 
 ### HomeContainer
@@ -37,8 +37,7 @@
 
 | Path | Component |
 |------|-----------|
-| '/sign-up' | 'AuthFormContainer' |
-| '/sign-in' | 'AuthFormContainer' |
+| '/gate' | 'GateContainer' |
 | '/home' |  'HomeContainer' |
 | '/home/newfeed'| 'NewFeedFormContainer' |
 | '/home/collections/:collectionId'  | 'FeedContainer' |

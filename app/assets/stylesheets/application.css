@@ -14,10 +14,12 @@
  *= require_self
  */
 html, body {
-  height: 100vh;
+  height: 100%;
   background: #E2E2E1;
 }
 
 .root {
+  display: flex;
+  flex-direction: row;
   height: 100vh;
 }

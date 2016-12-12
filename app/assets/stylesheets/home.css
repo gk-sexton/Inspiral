@@ -1,0 +1,18 @@
+.master {
+  min-height: 100%;
+  position: relative;
+  background: white;
+}
+.master header {
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+  position: relative;
+  margin-left: 275px;
+  height: 5vh;
+  min-height: 40px;
+  vertical-align: middle;
+}
+.feed {
+  position: relative;
+  margin-left: 275px;
+  height: 95vh;
+}

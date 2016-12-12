@@ -12,15 +12,7 @@
   width: 30px;
   height: auto;
 }
-.master {
-  position: relative;
-}
 
-.master:after {
-  content: '';
-  display: block;
-  clear: both;
-}
 .gate-body {
   width: 900px;
   margin: auto;
