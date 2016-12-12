@@ -10,7 +10,7 @@ const checker = (nextState, replace) => {
   if ( !!store.getState().session.currentUser ) {
     replace("/home");
   } else {
-    replace("/gate");
+    replace("/");
   }
 };
 
@@ -23,7 +23,7 @@ const onSessionEnter = (nextState, replace) => {
 
 const ensureLogin = (nextState, replace) => {
   if ( !store.getState().session.currentUser ) {
-    replace("/");
+    replace("/gate");
   }
 };
 
@@ -31,17 +31,14 @@ const Root = ({ store }) => {
   return (
   <Provider store={ store }>
     <Router history={ hashHistory }>
-
-      <Route path='/'>
-        <IndexRoute onEnter={ checker }/>
-        <Route component={ App } onEnter={ ensureLogin }>
-          <Route path='/home' component={ Home }></Route>
-        </Route>
-        <Route path='/gate' component={ Gate }></Route>
+      <Route path='/' component={ App } onEnter={ ensureLogin } >
+        <IndexRoute component={ Home }/>
       </Route>
+      <Route path='/gate' component={ Gate }></Route>
     </Router>
   </Provider>
 )};
+
 
 
 export default Root;
