@@ -6,4 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 User.destroy_all
-User.create(username: 'Guest', password: 'youllneverguestit' , email: 'guest@mail.fo')
+a = User.create(username: 'Guest', password: 'youllneverguestit' , email: 'guest@mail.fo')
+
+Collection.destroy_all
+Collection.create(title: 'Collection A', user_id: a.id)
+Collection.create(title: 'Collection B', user_id: a.id)
+Collection.create(title: 'Collection C', user_id: a.id)

@@ -23,8 +23,11 @@ const Root = ({ store }) => {
       <Router history={ hashHistory }>
         <Route path='/' component={ App } >
           <IndexRedirect to='home'/>
-          <Route path='home' component={ Home } onEnter={ ensureLogin }/>
-        </Route>
+          <Route path='home' component={ Home } onEnter={ ensureLogin }>
+            <Route path='/collections'/>
+            <Route path='/subscriptions'/>
+          </Route>
+      </Route>
         <Route path='/gate' component={ Gate } onEnter={ ensureLoggedout }></Route>
       </Router>
     </Provider>

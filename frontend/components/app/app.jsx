@@ -1,39 +1,3 @@
-// import React from 'react';
-// import GateContainer from './gate/gate_container';
-// import { logout } from '../actions/session_actions';
-//
-// const App = ({children}) => {
-//   let welcome;
-//   debugger
-//     welcome = <p className='heller'>{currentUser.username}</p>;
-//   function logoutCB() {
-//
-//   }
-//   return (
-//     <div className='master'>
-//       <header >
-//         <img className="bulb" src={window.logo}/>
-//       </header>
-//       <div className='sidebar'>
-//         <button className='recent'>Recent</button>
-//         <button className='new-feed'> New Feed + </button>
-//         <ul className='collection-list'>
-//           <li className= 'collection-title'>
-//             <ul className='subscription-title'>Demo Collection</ul>
-//           </li>
-//         </ul>
-//         <div className='sidebar-controls'>
-//           {welcome}
-//           <button onClick={ this.logoutCB }>Logout</button>
-//         </div>
-//       </div>
-//       { children }
-//     </div>
-//   )
-// };
-
-// export default App;
-
 import React from 'react';
 import { withRouter } from 'react-router';
 class App extends React.Component{
@@ -43,8 +7,23 @@ class App extends React.Component{
     this.logoutCB = this.logoutCB.bind(this);
   }
 
+  comonentDidMount(){
+    this.props.grabCollections(this.props.currentUser);
+  }
+
   logoutCB () {
     this.props.logout().then(() => this.props.router.push('/gate'));
+  }
+
+  renderCollections(){
+    return (
+      <ul className='collection-list'>
+      { this.props.collections.map((collection) =>
+        <li key={`collection-${collection.title}`}>
+          {collection.title}
+        </li> )}
+      </ul>
+    );
   }
 
   render(){
@@ -52,7 +31,7 @@ class App extends React.Component{
     if(this.props.currentUser){
       welcome = <p className='heller'>Signed in as {this.props.currentUser.username}</p>;
     }
-
+    const collections = this.renderCollections();
     return (
       <div className='master'>
         <header >
@@ -61,11 +40,7 @@ class App extends React.Component{
         <div className='sidebar'>
           <button className='recent'>Recent</button>
           <button className='new-feed'> New Feed + </button>
-          <ul className='collection-list'>
-            <li className= 'collection-title'>
-              <ul className='subscription-title'>Demo Collection</ul>
-            </li>
-          </ul>
+          { collections }
           <div className='sidebar-controls'>
             {welcome}
             <button onClick={ this.logoutCB }>Logout</button>
