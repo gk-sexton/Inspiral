@@ -7,10 +7,9 @@ class App extends React.Component{
     this.logoutCB = this.logoutCB.bind(this);
   }
 
-  comonentDidMount(){
+  componentDidMount(){
     this.props.grabCollections(this.props.currentUser);
   }
-
   logoutCB () {
     this.props.logout().then(() => this.props.router.push('/gate'));
   }
@@ -40,6 +39,7 @@ class App extends React.Component{
         <div className='sidebar'>
           <button className='recent'>Recent</button>
           <button className='new-feed'> New Feed + </button>
+          <p className='feed-head'>Your feeds:</p>
           { collections }
           <div className='sidebar-controls'>
             {welcome}

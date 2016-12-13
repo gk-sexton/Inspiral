@@ -1,3 +1,4 @@
 json.array!(@collections) do |collection|
-  json.partial! 'api/collections/collection', collection: collection
+  json.title collection.title
+  json.id collection.id
 end

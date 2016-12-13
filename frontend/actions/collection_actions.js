@@ -37,10 +37,12 @@ export function removeCollection(collection) {
   };
 }
 
-export const receiveCollections = collections => ({
-  type: RECEIVE_COLLECTIONS,
-  collections
-});
+export const receiveCollections = collections => {
+  return ({
+    type: RECEIVE_COLLECTIONS,
+    collections
+  });
+};
 
 export const receiveCollection = collection => ({
   type: RECEIVE_COLLECTION,

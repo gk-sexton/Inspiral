@@ -1,4 +1,4 @@
-import { RECEIVE_COLLECTIONS, RECEIVE_COLLECTION, RECEIVE_ERRORS, RESET_ERRORS } from '../actions/session_actions';
+import { RECEIVE_COLLECTIONS, RECEIVE_COLLECTION, RECEIVE_ERRORS, RESET_ERRORS } from '../actions/collection_actions';
 
 const noCollections = {
     collections: [],

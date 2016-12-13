@@ -14,7 +14,6 @@
 }
 
 button.new-feed, button.recent, button.sidebar-controls {
-  /*border: 1px solid red;*/
   background: transparent;
   font-weight: bold;
   padding: 10px;
@@ -29,9 +28,15 @@ button.recent:hover, button.recent:active,
 }
 
 .collection-list {
-  text-align: center;
-  font-weight: bold;
-  padding-top: 10px;
+  list-style: none;
+  text-align: left;
+  padding: 7px 15px;
+}
+.collection-list li {
+  padding: 2px;
+}
+.collection-list li:hover {
+  background: #c8c8c1;
 }
 
 .sidebar-controls {
@@ -48,4 +53,11 @@ button.recent:hover, button.recent:active,
   padding: 7px 15px;
   border-top-left-radius: 7px;
   border-top-right-radius:  7px;
+}
+
+.feed-head {
+  font-weight:lighter;
+  margin-top: 20px;
+  padding: 5px 10px;
+  color: rgba(0,0,0,0.5);
 }
