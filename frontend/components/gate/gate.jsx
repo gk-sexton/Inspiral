@@ -107,7 +107,7 @@ class Gate extends React.Component {
                       onChange={this.update('password')}
                       className='login-input' />
                 <br/>
-                <input className='submit-button' type="submit" value='Submit'/>
+                <input className='login-button' type="submit" value='Submit'/>
               </div>
             </form>
             { this.renderErrors() }

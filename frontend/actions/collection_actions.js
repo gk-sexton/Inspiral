@@ -46,13 +46,15 @@ export const receiveCollections = collections => {
 
 export const receiveCollection = collection => ({
   type: RECEIVE_COLLECTION,
-  collections
+  collection
 });
 
-export const receiveErrors = errors => ({
-  type: RECEIVE_ERRORS,
-  errors
-});
+export const receiveErrors = errors => {
+  return {
+    type: RECEIVE_ERRORS,
+    errors
+  };
+};
 
 export const resetErrors = errors => ({
   type: RESET_ERRORS,

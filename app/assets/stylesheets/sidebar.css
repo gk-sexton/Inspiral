@@ -26,6 +26,23 @@ button.recent:hover, button.recent:active,
   box-shadow: 0 0 3px #71716d;
   outline: 1px solid grey;
 }
+.new-collection {
+  text-align: left;
+  background: transparent;
+  padding-left: 15px;
+  background: #c8c8c1;
+  width: 180px;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  background-size: 15px;
+  background-image: url(addcoll.png);
+  background-repeat: no-repeat;
+  background-position: 99%;
+  outline: 0;
+}
+.new-collection:hover{
+  filter: brightness(80%);
+}
 
 .collection-list {
   list-style: none;
@@ -34,6 +51,10 @@ button.recent:hover, button.recent:active,
 }
 .collection-list li {
   padding: 2px;
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+.collection-list li:first-child{
+  border-top: 1px solid rgba(0,0,0,0.1);
 }
 .collection-list li:hover {
   background: #c8c8c1;

@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import { logout } from '../../actions/session_actions';
 import { grabCollections, addCollection, updateCollection,
-   removeCollection } from '../../actions/collection_actions';
+   removeCollection, resetErrors } from '../../actions/collection_actions';
 import App from './app';
 
 const mapStateToProps = ({ session, collections }) => {
@@ -20,6 +20,7 @@ const mapDispatchToProps = (dispatch) => {
     updateCollection: (collection) => dispatch(updateCollection(collection)),
     removeCollection: (collection) => dispatch(removeCollection(collection)),
     logout: () => dispatch(logout()),
+    resetErrors: () => dispatch(resetErrors()),
   };
 };
 

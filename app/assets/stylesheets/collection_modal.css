@@ -1,0 +1,51 @@
+.collection-modal {
+    /*display: flex;
+    flex-direction: column;*/
+    width: 250px;
+    margin: 150px auto;
+    height: 150px;
+    text-align: center;
+    background: white;
+    border: 1px solid black;
+    border-radius: 8px;
+    z-index: 11;
+    opacity: 1;
+    transition: all 0.2s;
+}
+
+.collection-modal-overlay {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 275px;
+  background: rgba(60, 60, 60,0.7);
+  z-index: 10;
+  transition: all 0.2s;
+}
+
+.title-input {
+  display: block;
+  margin:  20px auto;
+  margin-bottom: 0;
+  background: #FAFAFA;
+  border: 1px solid #D6D6D6;
+  padding: 7px;
+  font-size: 16px;
+}
+
+.title-button {
+  box-sizing: border-box;
+  background: transparent;
+  border: 1px solid #D6D6D6;
+  border-top: 1px solid white;
+}
+.collection-errors {
+  list-style: circle;
+  color: #f61010;
+  text-align: left;
+  margin-top: 5px;
+  margin-left: 60px;
+  width: 190px;
+}

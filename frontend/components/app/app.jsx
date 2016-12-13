@@ -1,10 +1,25 @@
 import React from 'react';
 import { withRouter } from 'react-router';
+import Modal from 'react-modal';
+
+
 class App extends React.Component{
   constructor(props){
     super(props);
+    this.state = { collection_title: '', isOpen: false };
     this.children = this.props.children;
     this.logoutCB = this.logoutCB.bind(this);
+    this.newFeedCB = this.newFeedCB.bind(this);
+    this.newCollectionCB = this.newCollectionCB.bind(this);
+    this.renderErrors = this.renderErrors.bind(this);
+    this.closeModal = this.closeModal.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  update(field) {
+    return e => this.setState({
+      [field]: e.currentTarget.value
+    });
   }
 
   componentDidMount(){
@@ -25,6 +40,38 @@ class App extends React.Component{
     );
   }
 
+  renderErrors() {
+    return (
+      <ul className='collection-errors'>
+        {this.props.collectionErrors.map((error, i)=>
+          <li key={`error-${i}`}>
+            {error}
+          </li>)}
+      </ul>
+    );
+  }
+
+  newFeedCB(){
+  }
+
+  handleSubmit(e){
+    e.preventDefault();
+    this.props.addCollection({title: this.state.collection_title,
+      user_id: this.props.currentUser.id}).then( ()=> {
+        this.props.grabCollections();
+        this.closeModal();
+      });
+  }
+
+  newCollectionCB(){
+    this.props.resetErrors();
+    this.setState({isOpen: true});
+  }
+
+  closeModal(){
+    this.setState({isOpen: false});
+  }
+
   render(){
     let welcome;
     if(this.props.currentUser){
@@ -38,13 +85,27 @@ class App extends React.Component{
         </header>
         <div className='sidebar'>
           <button className='recent'>Recent</button>
-          <button className='new-feed'> New Feed + </button>
+          <button className='new-feed' >New Feed</button>
           <p className='feed-head'>Your feeds:</p>
+          <button className='new-collection' onClick={ this.newCollectionCB }>Add a new collection</button>
           { collections }
           <div className='sidebar-controls'>
             {welcome}
             <button onClick={ this.logoutCB }>Logout</button>
           </div>
+
+          <Modal className='collection-modal' overlayClassName='collection-modal-overlay'
+            contentLabel='' onRequestClose={this.closeModal} isOpen={this.state.isOpen} >
+            <form className="collection-form" onSubmit={ this.handleSubmit }>
+              <input type='text' placeholder='Collection title'
+                value={this.state.collection_title}
+                onChange={this.update('collection_title')}
+                className='title-input' />
+              <input className='title-button' type="submit" value='Add collection'/>
+            </form>
+            { this.renderErrors() }
+          </Modal>
+
         </div>
         { this.children }
       </div>

@@ -64,7 +64,7 @@
 }
 
 
-.submit-button:hover, .submit-button:focus {
+.login-button:hover, .login-button:focus {
   box-shadow: 0 0 2px #71716d;
 }
 
