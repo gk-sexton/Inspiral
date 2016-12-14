@@ -4,6 +4,7 @@ import NewFeed from './newfeed';
 
 const mapStateToProps = ({ session, collections }) => {
   return  {
+    collections: collections.collections,
     currentUser: session.currentUser,
     errors: collections.errors
   };
@@ -11,7 +12,7 @@ const mapStateToProps = ({ session, collections }) => {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    resetErrors: () => dispatch(resetErrors()),
+    resetErrors: () => dispatch(resetErrors())
   };
 };
 

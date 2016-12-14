@@ -18,7 +18,7 @@ class Api::CollectionsController < ApplicationController
   end
 
   def show
-    @collection = Collection.find(params[:id])
+    @collection = current_user.collections.find(params[:id])
   end
 
   def index
