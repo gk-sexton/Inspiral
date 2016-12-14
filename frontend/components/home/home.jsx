@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, withRouter} from 'react-router';
+import { withRouter} from 'react-router';
 
 class Home extends React.Component {
   constructor(props){

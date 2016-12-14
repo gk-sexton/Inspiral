@@ -8,7 +8,7 @@ class NewFeed extends React.Component {
 
   render(){
     return (
-      <div class='HERE'>new feed form</div>
+      <div>new feed form</div>
     );
   }
 }

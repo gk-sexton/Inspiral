@@ -9,11 +9,11 @@ class App extends React.Component{
     this.state = { collection_title: '', isOpen: false };
     this.children = this.props.children;
     this.logoutCB = this.logoutCB.bind(this);
-    this.newFeedCB = this.newFeedCB.bind(this);
     this.newCollectionCB = this.newCollectionCB.bind(this);
     this.renderErrors = this.renderErrors.bind(this);
     this.closeModal = this.closeModal.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.buttonCB = this.buttonCB.bind(this);
   }
 
   update(field) {
@@ -25,8 +25,14 @@ class App extends React.Component{
   componentDidMount(){
     this.props.grabCollections(this.props.currentUser);
   }
+
   logoutCB () {
     this.props.logout().then(() => this.props.router.push('/gate'));
+  }
+
+  buttonCB(e){
+    const path = e.currentTarget.value;
+    this.props.router.push(path);
   }
 
   renderCollections(){
@@ -34,7 +40,7 @@ class App extends React.Component{
       <ul className='collection-list'>
       { this.props.collections.map((collection) =>
         <li key={`collection-${collection.title}`}>
-          {collection.title}
+          <button id={collection.id} onClick={ this.buttonCB } className='collection-link' value={`/home/collections/${collection.id}`}>{collection.title}</button>
         </li> )}
       </ul>
     );
@@ -49,9 +55,6 @@ class App extends React.Component{
           </li>)}
       </ul>
     );
-  }
-
-  newFeedCB(){
   }
 
   handleSubmit(e){
@@ -84,8 +87,8 @@ class App extends React.Component{
           <img className="bulb" src={window.logo}/>
         </header>
         <div className='sidebar'>
-          <button className='recent'>Recent</button>
-          <button className='new-feed' >New Feed</button>
+          <button value='/home' className='recent'onClick={ this.buttonCB }>Recent</button>
+          <button value='/home/newfeed' className='new-feed'onClick={ this.buttonCB }>New Feed</button>
           <p className='feed-head'>Your feeds:</p>
           <button className='new-collection' onClick={ this.newCollectionCB }>Add a new collection</button>
           { collections }
@@ -113,4 +116,4 @@ class App extends React.Component{
   }
 }
 
-export default App;
+export default withRouter(App);

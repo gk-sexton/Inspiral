@@ -13,15 +13,16 @@
   background: #E2E2E1;
 }
 
-button.new-feed, button.recent, button.sidebar-controls {
+.new-feed, .recent, button.sidebar-controls {
+  text-align: center;
+  color: inherit;
+  text-decoration: none;
   background: transparent;
   font-weight: bold;
   padding: 10px;
 }
 
-button.recent:hover, button.recent:active,
-  button.new-feed:hover, button.new-feed:active,
-    .sidebar-controls button:hover, .sidebar-controls button:active{
+.new-feed:hover, .recent:hover,.sidebar-controls button:hover {
   background: #c8c8c1;
   box-shadow: 0 0 3px #71716d;
   outline: 1px solid grey;
@@ -52,6 +53,11 @@ button.recent:hover, button.recent:active,
 .collection-list li {
   padding: 2px;
   border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+.collection-link {
+  background: transparent;
+  width: 100%;
+  text-align: left;
 }
 .collection-list li:first-child{
   border-top: 1px solid rgba(0,0,0,0.1);

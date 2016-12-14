@@ -2,6 +2,7 @@ export const RECEIVE_COLLECTIONS = 'RECEIVE_COLLECTIONS';
 export const RECEIVE_COLLECTION = 'RECEIVE_COLLECTION';
 export const RECEIVE_ERRORS = "RECEIVE_ERRORS";
 export const RESET_ERRORS = "RESET_ERRORS";
+export const DISPLAY_COLLECTION = 'DISPLAY_COLLECTION';
 import * as APIUtil from '../util/collection_api_util';
 
 
@@ -36,6 +37,13 @@ export function removeCollection(collection) {
         err => dispatch(receiveErrors(err.responseJSON)));
   };
 }
+
+export const displayCollection = collection_id => {
+  return {
+    type: DISPLAY_COLLECTION,
+    collection_id
+  };
+};
 
 export const receiveCollections = collections => {
   return ({
