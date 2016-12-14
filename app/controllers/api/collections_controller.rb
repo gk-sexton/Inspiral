@@ -22,11 +22,11 @@ class Api::CollectionsController < ApplicationController
   end
 
   def index
-    @collections = Collection.all
+    @collections = current_user.collections
   end
 
   def destroy
-    @collection = Collection.find(params[:id])
+    @collection = current_user.collections.find(params[:id])
     if @collection.destroy
       @collections = current_user.collections
       render :index

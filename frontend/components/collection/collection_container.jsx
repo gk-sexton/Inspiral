@@ -15,7 +15,7 @@ const mapStateToProps = ({ session, collections }) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     displayCollection: (displayCollection) => dispatch(displayCollection(displayCollection)),
-    removeCollection: (collectionID, user)=> dispatch(removeCollection(collectionID, user))
+    removeCollection: (collectionID)=> dispatch(removeCollection(collectionID))
   };
 };
 

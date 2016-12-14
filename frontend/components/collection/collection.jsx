@@ -19,7 +19,7 @@ class Collection extends React.Component{
   }
 
   removeCollectionCB(){
-    this.props.removeCollection({ id: this.state.id }, this.props.currentUser).then( this.props.router.push('/home'));
+    this.props.removeCollection({ id: this.props.router.params.id }).then( this.props.router.push('/home'));
   }
 
   render(){

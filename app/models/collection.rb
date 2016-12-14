@@ -4,5 +4,6 @@ class Collection < ApplicationRecord
     message: 'You\'re already using that collection name!'}
 
   belongs_to :user
-
+  has_many :taggings
+  has_many :subscriptions, through: :taggings, source: :subscription
 end
