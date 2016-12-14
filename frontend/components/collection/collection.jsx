@@ -1,23 +1,21 @@
 import React from 'react';
 import { withRouter } from 'react-router';
 import Modal from 'react-modal';
-
+import { values } from 'lodash';
 
 class Collection extends React.Component{
   constructor(props){
     super(props);
-    this.state = {id: this.idGrab()};
+    this.state = {id: null, collection_title: null};
     this.removeCollectionCB = this.removeCollectionCB.bind(this);
-    // this.idGrab = this.idGrab.bind(this);
   }
 
   idGrab(){
-    const idFinder = /\d*$/;
-    return parseInt(this.props.router.location.pathname.match(idFinder)[0]);
+    return this.props.router.params.id;
   }
-
-  componentWillReceiveProps(){
-    this.setState({id: this.idGrab()});
+  titleGrab(){
+    let collection = this.props.collections[this.props.router.params.id]
+    return (collection ? collection.title : null);
   }
 
   removeCollectionCB(){
@@ -26,9 +24,9 @@ class Collection extends React.Component{
 
   render(){
     return(
-      <div>
-        <span> Collection </span>
-        <button onClick={ this.removeCollectionCB }>Delete collection {this.state.id}</button>
+      <div className='collection-div'>
+        <span className='collection-title'> { this.titleGrab() }</span>
+        <button onClick={ this.removeCollectionCB }>Delete collection</button>
       </div>
   );
   }

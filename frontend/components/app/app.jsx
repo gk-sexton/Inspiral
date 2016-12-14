@@ -1,7 +1,7 @@
 import React from 'react';
 import { withRouter } from 'react-router';
 import Modal from 'react-modal';
-
+import { values } from 'lodash';
 
 class App extends React.Component{
   constructor(props){
@@ -38,7 +38,7 @@ class App extends React.Component{
   renderCollections(){
     return (
       <ul className='collection-list'>
-      { this.props.collections.map((collection) =>
+      { values(this.props.collections).map((collection) =>
         <li key={`collection-${collection.title}`}>
           <button id={collection.id} onClick={ this.buttonCB } className='collection-link'
             value={`/home/collections/${collection.id}`}>{collection.title}</button>

@@ -22,7 +22,7 @@ class Api::CollectionsController < ApplicationController
   end
 
   def index
-    @collections = current_user.collections
+    @collections = Collection.all
   end
 
   def destroy

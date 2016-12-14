@@ -39,10 +39,10 @@ export function removeCollection(collection, user) {
   };
 }
 
-export const displayCollection = collection_id => {
+export const displayCollection = collection => {
   return {
     type: DISPLAY_COLLECTION,
-    collection_id
+    collection
   };
 };
 

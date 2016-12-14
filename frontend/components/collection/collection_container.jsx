@@ -6,14 +6,15 @@ import { displayCollection, removeCollection } from '../../actions/collection_ac
 const mapStateToProps = ({ session, collections }) => {
   return  {
     currentUser: session.currentUser,
-    displayCollectionID: collections.displayCollectionID,
-    errors: collections.errors
+    displayCollection: collections.displayCollection,
+    errors: collections.errors,
+    collections: collections.collections
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    displayCollection: (displayCollectionID) => dispatch(displayCollection(displayCollectionID)),
+    displayCollection: (displayCollection) => dispatch(displayCollection(displayCollection)),
     removeCollection: (collectionID, user)=> dispatch(removeCollection(collectionID, user))
   };
 };
