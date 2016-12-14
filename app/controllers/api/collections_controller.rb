@@ -25,10 +25,11 @@ class Api::CollectionsController < ApplicationController
     @collections = current_user.collections
   end
 
-  def delete
+  def destroy
     @collection = Collection.find(params[:id])
     if @collection.destroy
-      render 'api/collections/show'
+      @collections = current_user.collections
+      render :index
     else
       render json: @collection.errors.full_messages, status: 404
     end

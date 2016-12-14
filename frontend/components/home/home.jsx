@@ -10,7 +10,7 @@ class Home extends React.Component {
   render () {
     return (
       <div className='feed'>
-        { this.children }
+        { this.props.children }
       </div>
     );
   }

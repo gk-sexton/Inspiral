@@ -40,7 +40,8 @@ class App extends React.Component{
       <ul className='collection-list'>
       { this.props.collections.map((collection) =>
         <li key={`collection-${collection.title}`}>
-          <button id={collection.id} onClick={ this.buttonCB } className='collection-link' value={`/home/collections/${collection.id}`}>{collection.title}</button>
+          <button id={collection.id} onClick={ this.buttonCB } className='collection-link'
+            value={`/home/collections/${collection.id}`}>{collection.title}</button>
         </li> )}
       </ul>
     );
@@ -49,7 +50,7 @@ class App extends React.Component{
   renderErrors() {
     return (
       <ul className='collection-errors'>
-        {this.props.collectionErrors.map((error, i)=>
+        {this.props.errors.map((error, i)=>
           <li key={`error-${i}`}>
             {error}
           </li>)}
@@ -72,7 +73,7 @@ class App extends React.Component{
   }
 
   closeModal(){
-    this.setState({isOpen: false});
+    this.setState({isOpen: false, collection_title: ''});
   }
 
   render(){
@@ -110,7 +111,7 @@ class App extends React.Component{
           </Modal>
 
         </div>
-        { this.children }
+        { this.props.children }
       </div>
     );
   }

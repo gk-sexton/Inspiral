@@ -20,6 +20,7 @@ const CollectionReducer = (state = noCollections, action) => {
       return Object.assign( {}, state, {displayCollectionID: action.collection_id});
 
     case RECEIVE_ERRORS:
+      debugger
       return Object.assign( {}, state, {errors: action.errors});
 
     case RESET_ERRORS:

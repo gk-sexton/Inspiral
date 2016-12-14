@@ -17,7 +17,7 @@ export const addCollection = (collection) => {
 export const removeCollection = (collection) => {
   return $.ajax({
     method: 'delete',
-    url: `/api/collections/${collection[id]}`,
+    url: `/api/collections/${collection.id}`,
     data: { collection }
   });
 };
@@ -25,7 +25,7 @@ export const removeCollection = (collection) => {
 export const updateCollection = (collection) => {
   return $.ajax({
     method: 'patch',
-    url: `/api/collections/${collection[id]}`,
+    url: `/api/collections/${collection.id}`,
     data: { collection }
   });
 };

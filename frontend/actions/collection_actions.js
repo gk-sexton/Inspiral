@@ -25,16 +25,17 @@ export function addCollection(collection) {
 export function updateCollection(collection) {
   return (dispatch) => {
     return APIUtil.updateCollection(collection)
-      .then(collection => dispatch(receiveCollection(collection)),
+      .then( collection => dispatch(receiveCollection(collection)),
         err => dispatch(receiveErrors(err.responseJSON)));
   };
 }
 
-export function removeCollection(collection) {
+export function removeCollection(collection, user) {
   return (dispatch) => {
-    return APIUtil.updateCollection(collection)
-      .then(collections => dispatch(receiveCollections(collections)),
-        err => dispatch(receiveErrors(err.responseJSON)));
+    return APIUtil.removeCollection(collection)
+      .then( collections => dispatch(receiveCollections(collections)),
+        err => {
+          dispatch(receiveErrors(err.responseJSON));});
   };
 }
 
