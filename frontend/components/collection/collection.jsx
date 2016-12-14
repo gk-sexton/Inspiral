@@ -25,8 +25,8 @@ class Collection extends React.Component{
   render(){
     return(
       <div className='collection-div'>
-        <span className='collection-title'> { this.titleGrab() }</span>
-        <button onClick={ this.removeCollectionCB }>Delete collection</button>
+        <span className='collection-title'>{ this.titleGrab() }</span>
+        <button className='collection-delete-button' onClick={ this.removeCollectionCB }>DELETE COLLECTION</button>
       </div>
   );
   }

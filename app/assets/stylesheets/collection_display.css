@@ -1,0 +1,24 @@
+.collection-div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.collection-title {
+  font-size: 36px;
+  margin: 15px 15px;
+  font-weight: bold;
+}
+
+.collection-delete-button {
+  font-size: 13px;
+  font-weight: bold;
+  box-sizing: border-box;
+  padding: 10px;
+  width:100px;
+  border-bottom-left-radius: 7px;
+  background: #f20606;
+  color: white;
+}
+.collection-delete-button:hover {
+  filter: brightness(150%);
+}
