@@ -1,18 +1,21 @@
 import { connect } from 'react-redux';
-import { resetErrors } from '../../actions/session_actions';
+import { resetErrors } from '../../actions/subscription_actions';
+import { addSubscription } from '../../actions/subscription_actions';
 import NewFeed from './newfeed';
 
-const mapStateToProps = ({ session, collections }) => {
+const mapStateToProps = ({ session, collections, subscriptions }) => {
   return  {
     collections: collections.collections,
     currentUser: session.currentUser,
-    errors: collections.errors
+    errors: subscriptions.errors,
+    subscriptions: subscriptions.subscriptions
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    resetErrors: () => dispatch(resetErrors())
+    resetErrors: () => dispatch(resetErrors()),
+    addSubscription: (subscription) => dispatch(addSubscription(subscription))
   };
 };
 

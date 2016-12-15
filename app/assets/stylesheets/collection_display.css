@@ -44,7 +44,9 @@
   padding: 2px;
 }
 
+
 .subscription-link {
   width: 100%;
   text-align: left;
+  background: linear-gradient(to right, transparent, rgba(43, 179, 76, 0.62));
 }

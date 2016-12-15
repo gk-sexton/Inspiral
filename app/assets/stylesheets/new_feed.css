@@ -1,0 +1,87 @@
+.new-feed-div {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.new-feed-title {
+  font-size: 36px;
+  margin: 15px 15px;
+  font-weight: bold;
+  width: 85%;
+}
+
+.right-sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 15%;
+  height: 100%;
+  background: #E2E2E1;
+}
+
+.feed-form {
+  display: flex;
+  position: absolute;
+  top: 90px;
+  left: 50px;
+  width: 100%
+}
+
+.feed-form span {
+  width: 80%;
+  height: 40px;
+  font-size: 24px;
+  text-align: center;
+}
+
+.submit-button {
+  width: 10%;
+  height: 155%;
+  font-weight: bold;
+  font-size: inherit;
+  border-top-right-radius: 7px;
+  border-bottom-right-radius: 7px;
+  border: 1px solid #2BB24C;
+  border-left: 0;
+}
+
+.url-input {
+  width: 55%;
+  height: inherit;
+  font-size: inherit;
+  border: 1px solid #2BB24C;
+  padding: 10px;
+  border-top-left-radius: 7px;
+  border-bottom-left-radius: 7px;
+}
+.url-input:active {
+  outline: none;
+}
+.feed-title-input {
+  width: 25%;
+  height: inherit;
+  font-size: inherit;
+  border: 1px solid #2BB24C;
+  padding: 10px;
+}
+.feed-title-input:active {
+  outline: none;
+}
+
+.collection-box-list {
+  list-style: none;
+  text-align: left;
+  position: absolute;
+  padding: 7px 15px;
+  top: 100px;
+  left: 40px;
+  border: none;
+}
+
+.box-label {
+  font-size: 20px;
+}
+.collection-box{
+}
+input[type="checkbox" i] {
+    margin: 10px 10px 10px 4px;
+}

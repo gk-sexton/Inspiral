@@ -53,7 +53,6 @@
   padding: 7px 15px;
 }
 .collection-list li {
-  padding: 2px;
   border-bottom: 1px solid rgba(0,0,0,0.2);
 }
 
@@ -61,6 +60,7 @@
   background: transparent;
   width: 100%;
   text-align: left;
+  padding: 2px;
 }
 .collection-list li:first-child{
   border-top: 1px solid rgba(0,0,0,0.2);

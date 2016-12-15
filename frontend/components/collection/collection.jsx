@@ -55,8 +55,8 @@ class Collection extends React.Component{
           { subscriptions }
           <button className='collection-delete-button' onClick={ this.removeCollectionCB }>DELETE COLLECTION</button>
         </div>
-    </div>
-  );
+      </div>
+    );
   }
 }
 

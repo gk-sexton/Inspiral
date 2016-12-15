@@ -2,6 +2,9 @@ class Api::SubscriptionsController < ApplicationController
   def create
     @subscription = Subscription.new(subscription_params)
     if @subscription.save
+      params[:subscription][:collection_ids].each do |collID|
+        Tagging.create(collection_id: collID, subscription_id: @subscription.id)
+      end
       render "api/subscriptions/show"
     else
       render json: @subscription.errors.full_messages, status: 422
@@ -29,7 +32,7 @@ class Api::SubscriptionsController < ApplicationController
     @subscription = current_user.subscriptions.find(params[:id])
     if @subscription.destroy
       @subscriptions = current_user.subscriptions
-      render :index #TODO check rendering info
+      render :index
     else
       render json: @subscription.errors.full_messages, status: 404
     end
@@ -38,6 +41,6 @@ class Api::SubscriptionsController < ApplicationController
   private
 
   def subscription_params
-    params.require(:subscription).permit() #TODO add needed keys
+    params.require(:subscription).permit(:url, :feed_title, :user_id)
   end
 end
