@@ -6,22 +6,22 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 User.destroy_all
-a = User.create(username: 'Guest', password: 'youllneverguestit' , email: 'guest@mail.fo')
+u = User.create(username: 'Guest', password: 'youllneverguestit' , email: 'guest@mail.fo')
 
 Collection.destroy_all
-b = Collection.create(title: 'Collection A', user_id: a.id)
-c = Collection.create(title: 'Collection B', user_id: a.id)
-d = Collection.create(title: 'Collection C', user_id: a.id)
+a = Collection.create(title: 'Collection A', user_id: u.id)
+b = Collection.create(title: 'Collection B', user_id: u.id)
+c = Collection.create(title: 'Collection C', user_id: u.id)
 
 Subscription.destroy_all
-e = Subscription.create(feed_title: 'Sub 1' , user_id: a.id, url: 'youtube.com')
-d = Subscription.create(feed_title: 'Sub 2' , user_id: a.id, url: 'somethinsomethin.com')
-f = Subscription.create(feed_title: 'Sub 3' , user_id: a.id, url: 'pls.ru')
+s1 = Subscription.create(feed_title: 'Sub 1' , user_id: u.id, url: 'youtube.com')
+s2 = Subscription.create(feed_title: 'Sub 2' , user_id: u.id, url: 'somethinsomethin.com')
+s3 = Subscription.create(feed_title: 'Sub 3' , user_id: u.id, url: 'pls.ru')
 
 Tagging.destroy_all
-Tagging.create(collection_id: b.id, subscription_id: e.id)
-Tagging.create(collection_id: b.id, subscription_id: d.id)
-Tagging.create(collection_id: b.id, subscription_id: f.id)
-Tagging.create(collection_id: c.id, subscription_id: e.id)
-Tagging.create(collection_id: c.id, subscription_id: d.id)
-Tagging.create(collection_id: d.id, subscription_id: e.id)
+Tagging.create(collection_id: a.id, subscription_id: s1.id)
+Tagging.create(collection_id: a.id, subscription_id: s2.id)
+Tagging.create(collection_id: a.id, subscription_id: s3.id)
+Tagging.create(collection_id: b.id, subscription_id: s1.id)
+Tagging.create(collection_id: b.id, subscription_id: s2.id)
+Tagging.create(collection_id: c.id, subscription_id: s1.id)
