@@ -8,6 +8,7 @@ class Collection extends React.Component{
     super(props);
     this.state = {id: null, collection_title: null};
     this.removeCollectionCB = this.removeCollectionCB.bind(this);
+    this.renderSubscriptions = this.renderSubscriptions.bind(this);
   }
 
   idGrab(){
@@ -18,16 +19,43 @@ class Collection extends React.Component{
     return (collection ? collection.title : null);
   }
 
+  componentDidMount(){
+    this.props.grabSubscriptions(this.props.currentUser);
+  }
+
+  renderSubscriptions(){
+    const collID = parseInt(this.props.router.params.id);
+    const selectedSubs = values(this.props.subscriptions).filter((subscription) => {
+      return subscription.collection_ids.includes(collID);
+      }
+    );
+    return (
+      <ul className='subscription-list'>
+        { selectedSubs.map((subscription) =>
+          <li key={`subscription-${subscription.feed_title}`}>
+            <button id={subscription.id} className='subscription-link'
+              value={`/home/subscriptions/${subscription.id}`}>{subscription.feed_title}</button>
+          </li> )
+        }
+    </ul>
+    );
+  }
+
   removeCollectionCB(){
     this.props.removeCollection({ id: this.props.router.params.id }).then( this.props.router.push('/home'));
   }
 
   render(){
+    const subscriptions = this.renderSubscriptions();
     return(
       <div className='collection-div'>
-        <span className='collection-title'>{ this.titleGrab() }</span>
-        <button className='collection-delete-button' onClick={ this.removeCollectionCB }>DELETE COLLECTION</button>
-      </div>
+        <div className='collection-title'>{ this.titleGrab() }</div>
+        <div className='right-sidebar'>
+          <span className='subs-leader'>Associated feeds:</span>
+          { subscriptions }
+          <button className='collection-delete-button' onClick={ this.removeCollectionCB }>DELETE COLLECTION</button>
+        </div>
+    </div>
   );
   }
 }

@@ -20,6 +20,8 @@
   background: transparent;
   font-weight: bold;
   padding: 10px;
+  border-bottom: 1px solid rgba(0,0,0,0.2);
+
 }
 
 .new-feed:hover, .recent:hover,.sidebar-controls button:hover {
@@ -52,7 +54,7 @@
 }
 .collection-list li {
   padding: 2px;
-  border-bottom: 1px solid rgba(0,0,0,0.1);
+  border-bottom: 1px solid rgba(0,0,0,0.2);
 }
 
 .collection-link {
@@ -61,7 +63,7 @@
   text-align: left;
 }
 .collection-list li:first-child{
-  border-top: 1px solid rgba(0,0,0,0.1);
+  border-top: 1px solid rgba(0,0,0,0.2);
 }
 .collection-list li:hover {
   background: #c8c8c1;
@@ -69,7 +71,7 @@
 
 .sidebar-controls {
   padding-top: 5px;
-  border-top: 1px solid rgba(0,0,0,0.1);
+  border-top: 1px solid rgba(0,0,0,0.2);
   position: absolute;
   top: 1;
   bottom: 0;
@@ -84,8 +86,8 @@
 }
 
 .feed-head {
-  font-weight:lighter;
   margin-top: 20px;
   padding: 5px 10px;
   color: rgba(0,0,0,0.5);
+  border-bottom: 1px solid rgba(0,0,0,0.1);
 }

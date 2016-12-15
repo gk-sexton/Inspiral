@@ -1,24 +1,50 @@
 .collection-div {
   display: flex;
-  flex-direction: row;
   justify-content: space-between;
+  width: 100%;
 }
 .collection-title {
   font-size: 36px;
   margin: 15px 15px;
   font-weight: bold;
+  width: 85%;
 }
 
 .collection-delete-button {
-  font-size: 13px;
-  font-weight: bold;
+  font-size: 14px;
   box-sizing: border-box;
-  padding: 10px;
-  width:100px;
-  border-bottom-left-radius: 7px;
-  background: #f20606;
-  color: white;
+  height: 30px;
+  border-top: 1px solid rgba(0,0,0,0.1);
+  margin-top: auto;
 }
 .collection-delete-button:hover {
-  filter: brightness(150%);
+  filter: brightness(80%);
+}
+
+.right-sidebar {
+  display: flex;
+  flex-direction: column;
+  width: 15%;
+  height: 100%;
+  background: #E2E2E1;
+}
+
+.subs-leader {
+  margin: 30px 10px;
+  color: rgba(0,0,0,0.5);
+  border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.subscription-list {
+  list-style: none;
+  text-align: left;
+  padding: 7px 15px;
+}
+.subscription-list li {
+  padding: 2px;
+}
+
+.subscription-link {
+  width: 100%;
+  text-align: left;
 }

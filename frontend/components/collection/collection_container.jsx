@@ -1,21 +1,26 @@
 import { connect } from 'react-redux';
 import Collection from './collection';
-import { displayCollection, removeCollection } from '../../actions/collection_actions';
+import { removeCollection } from '../../actions/collection_actions';
+import { grabSubscriptions, addSubscription,
+  removeSubscription } from '../../actions/subscription_actions';
 // import { grabSubscriptions } from '../../actions/subscription_actions'; ADD THESE
 
-const mapStateToProps = ({ session, collections }) => {
+const mapStateToProps = ({ session, collections, subscriptions }) => {
   return  {
     currentUser: session.currentUser,
     displayCollection: collections.displayCollection,
     errors: collections.errors,
-    collections: collections.collections
+    collections: collections.collections,
+    subscriptions: subscriptions.subscriptions
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    displayCollection: (displayCollection) => dispatch(displayCollection(displayCollection)),
-    removeCollection: (collectionID)=> dispatch(removeCollection(collectionID))
+    grabSubscriptions: (user) => dispatch(grabSubscriptions(user)),
+    addSubscription: (collection) => dispatch(addSubscription(collection)),
+    removeSubscription: (collectionID)=> dispatch(removeSubscription(collectionID)),
+    removeCollection: (collectionID)=> dispatch(removeCollection(collectionID)),
   };
 };
 

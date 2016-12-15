@@ -3,7 +3,6 @@ import { RECEIVE_COLLECTIONS, RECEIVE_COLLECTION, RECEIVE_ERRORS, RESET_ERRORS,
 
 const noCollections = {
     collections: {},
-    displayCollection: null,
     errors: []
   };
 
@@ -15,9 +14,6 @@ const CollectionReducer = (state = noCollections, action) => {
 
     case RECEIVE_COLLECTION:
       return Object.assign( {}, state, {[action.collection.id]: action.collection.title});
-
-    case DISPLAY_COLLECTION:
-      return Object.assign( {}, state, {displayCollection: action.collection});
 
     case RECEIVE_ERRORS:
       return Object.assign( {}, state, {errors: action.errors});
