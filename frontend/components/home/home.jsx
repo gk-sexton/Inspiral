@@ -6,6 +6,7 @@ class Home extends React.Component {
   constructor(props){
     super(props);
     this.renderArticles = this.renderArticles.bind(this);
+    this.recentTitle = this.recentTitle.bind(this);
   }
 
   componentDidMount(){
@@ -47,10 +48,18 @@ class Home extends React.Component {
     }
   }
 
+  recentTitle(){
+    if (this.props.router.location.pathname==='/home'){
+      return (
+        <div className='collection-title'>Recent</div>
+      )
+    }
+  }
 
   render () {
     return (
       <div className='feed'>
+        { this.recentTitle() }
         { this.renderArticles() }
         { this.props.children }
       </div>

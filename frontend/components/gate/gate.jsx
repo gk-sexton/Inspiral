@@ -91,7 +91,6 @@ class Gate extends React.Component {
           <button className='signup-button' onClick={ this.openSignup }>REGISTER FOR FREE</button>
           <p>Alternatively, you can demo the site, no sign-up reqired:</p>
           <button className='signup-button' onClick={ this.guestLogin }>TAKE A SPIN</button>
-          <img className='splash' src={window.splashimage}/>
           <Modal className='modal-box' overlayClassName='modal-box-overlay'
             contentLabel='' onRequestClose={this.closeModal} isOpen={this.state.isOpen} >
             { prompt }

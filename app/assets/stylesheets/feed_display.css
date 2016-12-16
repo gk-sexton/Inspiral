@@ -3,10 +3,11 @@
 }
 
 .article-body {
-  background: rgb(218, 217, 217);
-  border: 1px solid rgba(43, 179, 76, 0.79);
+  background: rgba(218, 217, 217, 0.35);
+  border: 1px solid rgba(43, 105, 179, 0.79);
 }
 
 .article {
   padding: 15px;
+  background: rgba(76, 97, 136, 0.53)
 }

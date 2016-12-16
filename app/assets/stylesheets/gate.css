@@ -4,7 +4,7 @@
   vertical-align: middle;
   padding: 5px 5px 5px;
   font-size: 30px;
-  color: #585f66;
+  color: #7f8993;
   margin: 25px;
 }
 
@@ -16,23 +16,24 @@
 .gate-body {
   width: 900px;
   margin: auto;
-  background: #E2E2E1;
+  background: transparent;
   height: 200px;
 }
 .gate-body h1 {
   font-size: 36px;
   font-weight: bold;
+  color: white;
 }
 
 .gate-body p {
   margin-top: 25px;
-  color: #585f66;
+  color: #7f8993;
   font-weight: bold;
 }
 
 .gate-body button {
   margin-top: 25px;
-  background: #2BB24C;
+  background: #2b86b3;
   color: white;
   font-weight: bold;
   border-radius: 5px;
@@ -42,8 +43,8 @@
 
 .gate-body button:hover {
   cursor: pointer;
-  background: #208a39;
-  box-shadow: 0 0 3px #125221;
+  background: #33a3da;
+  box-shadow: 0 0 3px #1c5c7c;
 }
 
 .splash {
@@ -53,14 +54,16 @@
 
 .login-button {
   margin-top: 10px;
-  border: 1px solid black;
+  border: 1px solid rgba(255, 255, 255, 0.43);
   padding: 12px;
   font-size: 20px;
   display: block;
   border-radius: 5px;
+  background: transparent;
+  color: white;
 }
 .login-button:hover, login-button:focus {
   cursor: pointer;
-  background: #c8c8c1;
   box-shadow: 0 0 3px #71716d;
+  filter: brightness(200%);
 }
