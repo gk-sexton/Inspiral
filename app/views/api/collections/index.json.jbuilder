@@ -6,5 +6,7 @@
   json.set! collection.id do
     json.id collection.id
     json.title collection.title
+    json.subscription_ids collection.subscription_ids
+    json.subscriptions collection.subscriptions
   end
 end

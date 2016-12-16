@@ -1,0 +1,12 @@
+.article-title {
+  font-weight: bold;
+}
+
+.article-body {
+  background: rgb(218, 217, 217);
+  border: 1px solid rgba(43, 179, 76, 0.79);
+}
+
+.article {
+  padding: 15px;
+}

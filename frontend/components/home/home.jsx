@@ -18,13 +18,17 @@ class Home extends React.Component {
     });
   }
 
+
   renderArticles(){
-    if (!this.props.router.params.id){
+    if (this.props.router.location.pathname==='/home'){
       const subData = values(this.props.articles) || [];
       const arrays = subData.map( obj => {
         let entryArray = obj.responseData.feed.entries;
         let entryContents = entryArray.map( article => {
-          return article.title
+          return <li className='article'>
+            <span className='article-title'>{article.title}</span>
+            <p className='article-body' dangerouslySetInnerHTML={{ __html: article.content }}></p>
+          </li>
           }
         )
         return entryContents
@@ -35,7 +39,7 @@ class Home extends React.Component {
       return (
         <ul className='home-feed-list'>
           { totalArray.map( content =>
-              <li>{content}</li>
+              <li> {content}</li>
             )
           }
         </ul>
