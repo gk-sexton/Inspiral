@@ -14,9 +14,9 @@ b = Collection.create(title: 'Collection B', user_id: u.id)
 c = Collection.create(title: 'Collection C', user_id: u.id)
 
 Subscription.destroy_all
-s1 = Subscription.create(feed_title: 'Sub 1' , user_id: u.id, url: 'youtube.com')
-s2 = Subscription.create(feed_title: 'Sub 2' , user_id: u.id, url: 'somethinsomethin.com')
-s3 = Subscription.create(feed_title: 'Sub 3' , user_id: u.id, url: 'pls.ru')
+s1 = Subscription.create(feed_title: 'Economist: Economics' , user_id: u.id, url: 'http://www.economist.com/sections/economics/rss.xml')
+s2 = Subscription.create(feed_title: 'Economist: Tech' , user_id: u.id, url: 'http://www.economist.com/sections/science-technology/rss.xml')
+s3 = Subscription.create(feed_title: 'Economist: Culture' , user_id: u.id, url: 'http://www.economist.com/sections/culture/rss.xml')
 
 Tagging.destroy_all
 Tagging.create(collection_id: a.id, subscription_id: s1.id)

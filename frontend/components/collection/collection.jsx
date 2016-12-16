@@ -9,6 +9,7 @@ class Collection extends React.Component{
     this.state = {id: null, collection_title: null};
     this.removeCollectionCB = this.removeCollectionCB.bind(this);
     this.renderSubscriptions = this.renderSubscriptions.bind(this);
+    this.generateRelatedSubs = this.generateRelatedSubs.bind(this);
   }
 
   idGrab(){
@@ -20,15 +21,24 @@ class Collection extends React.Component{
   }
 
   componentDidMount(){
-    this.props.grabSubscriptions(this.props.currentUser);
+    const that = this;
+    this.props.grabSubscriptions(this.props.currentUser).then((subscriptions)=> {
+      let subs = values(subscriptions.subscriptions);
+      subs.forEach(sub =>
+        that.props.grabArticles(sub.url, sub.id)
+      )
+    });
   }
 
-  renderSubscriptions(){
+  generateRelatedSubs(){
     const collID = parseInt(this.props.router.params.id);
-    const selectedSubs = values(this.props.subscriptions).filter((subscription) => {
+    return values(this.props.subscriptions).filter((subscription) => {
       return subscription.collection_ids.includes(collID);
       }
     );
+  }
+  renderSubscriptions(){
+  const selectedSubs = this.generateRelatedSubs();
     return (
       <ul className='subscription-list'>
         { selectedSubs.map((subscription) =>
