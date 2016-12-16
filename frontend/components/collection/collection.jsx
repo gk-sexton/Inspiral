@@ -12,22 +12,16 @@ class Collection extends React.Component{
     this.generateRelatedSubs = this.generateRelatedSubs.bind(this);
   }
 
+  componentDidMount(){
+    this.props.grabSubscriptions();
+  }
+
   idGrab(){
     return this.props.router.params.id;
   }
   titleGrab(){
     let collection = this.props.collections[this.props.router.params.id]
     return (collection ? collection.title : null);
-  }
-
-  componentDidMount(){
-    const that = this;
-    this.props.grabSubscriptions(this.props.currentUser).then((subscriptions)=> {
-      let subs = values(subscriptions.subscriptions);
-      subs.forEach(sub =>
-        that.props.grabArticles(sub.url, sub.id)
-      )
-    });
   }
 
   generateRelatedSubs(){

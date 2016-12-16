@@ -5,7 +5,6 @@ export function grabArticles(subURL, subID) {
   return (dispatch) => {
     return grabArticlesUtil(subURL)
       .then(articles => {
-        debugger
         dispatch(receiveArticles(articles,subID))
       },
         err => {

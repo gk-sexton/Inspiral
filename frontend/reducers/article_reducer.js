@@ -1,5 +1,5 @@
 import { RECEIVE_ARTICLES } from '../actions/article_actions';
-
+import { merge } from 'lodash'
 const noArticles = {
     articles: {},
     errors: []
@@ -9,7 +9,7 @@ const ArticleReducer = (state = noArticles, action) => {
   Object.freeze(state);
   switch(action.type){
     case RECEIVE_ARTICLES:
-      let nuState = Object.assign({}, state, {errors: []})
+      let nuState = merge({}, state, {errors: []})
       let data = action.articles.articles;
       nuState.articles[action.articles.subID] = data;
       return nuState

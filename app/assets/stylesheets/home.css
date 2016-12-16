@@ -12,8 +12,17 @@
   vertical-align: middle;
 }
 .feed {
+  overflow: auto;
   display: flex;
   position: relative;
   margin-left: 275px;
   height: 95vh;
+}
+
+.home-feed-list {
+  list-style: none;
+  margin: auto;
+}
+.home-feed-list li {
+  padding: 10px;
 }
