@@ -23,7 +23,7 @@
 
 .login-form {
   padding: 25px 15px;
-  margin-left: 24px;
+  margin-left: 15px;
   width: 200px;
 }
 .modal-box h3 {
@@ -40,10 +40,10 @@
 .login-div input:last-child {
   color: white;
   font-weight: bold;
-  margin: 25px 69px 10px;
+  margin: 25px 76px 10px;
   border-radius: 5px;
   padding: 5px;
-  background: #2BB24C;
+  background: #2b86b3;
   cursor: pointer;
   border: none;
   font-size: 20px;
@@ -66,6 +66,7 @@
 
 .login-button:hover, .login-button:focus {
   box-shadow: 0 0 2px #71716d;
+  filter: brightness(80%);
 }
 
 .switch-link {
