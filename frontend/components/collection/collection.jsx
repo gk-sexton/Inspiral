@@ -17,10 +17,9 @@ class Collection extends React.Component{
     this.props.grabSubscriptions();
   }
 
-  componentDidUpdate(){
-    debugger
-    this.props.grabSubscriptions();
-  }
+  // componentDidUpdate(){
+  //   this.props.grabSubscriptions();
+  // }
   idGrab(){
     return this.props.router.params.id;
   }
