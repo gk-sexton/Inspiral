@@ -49,11 +49,11 @@ class Collection extends React.Component{
         }
       })
       const arrays = neededSubs.map( obj => {
-        let entryArray = obj.responseData.feed.entries;
+        let entryArray = obj.query.results.item;
         let entryContents = entryArray.map( article => {
           return <li className='article'>
             <span className='article-title' >{article.title}</span>
-            <p className= 'article-body' dangerouslySetInnerHTML={{ __html: article.content }}></p>
+            <p className= 'article-body' dangerouslySetInnerHTML={{ __html: article.description }}></p>
           </li>
           }
         )
